@@ -10,20 +10,18 @@ const ToDoList = () => {
 
 
       useEffect(async() => {
-          let arr = await axios.get("https://localhost:44370/taskItem");
-
+          let arr = await axios.get(`https://localhost:44370/taskItem`);
           if(arr)
           {
             setTaskList(arr.data)
           }
       }, [])
 
-      const deleteTask = (index) =>{
-          let tempList=taskList
-          tempList.splice(index,1)
-          localStorage.setItem("taskList", JSON.stringify(tempList))
-          setTaskList(tempList)
-          window.location.reload();
+      const deleteTask = async (index) =>{
+          await axios.delete(`https://localhost:44370/taskItem/${index}`)
+          const arr =  await axios.get("https://localhost:44370/taskItem")
+          setTaskList(arr.data)
+          setModal(false)
       }
 
     const toggle = () =>{ 
@@ -32,19 +30,19 @@ const ToDoList = () => {
              
     const saveTask = async (taskObj) => {
         debugger
-        await axios.post("https://localhost:44370/taskItem", taskObj)
+        await axios.post(`https://localhost:44370/taskItem`, taskObj)
         const arr =  await axios.get("https://localhost:44370/taskItem")
         setTaskList(arr.data)
         setModal(false)
     }
 
-    const updateList = (obj, index) =>{
-       let tempList = taskList
-       tempList[index] = obj
-       localStorage.setItem("taskList", JSON.stringify(tempList)) 
-       setTaskList(tempList)
-       window.location.reload()
-
+    const updateList = async (taskObj, index) =>{
+        console.log(taskObj)
+        console.log(index)
+        await axios.put(`https://localhost:44370/taskItem/${index}`,taskObj)
+        const arr =  await axios.get("https://localhost:44370/taskItem")
+        setTaskList(arr.data)
+        setModal(false)
     }
     return(
         <>
@@ -54,7 +52,7 @@ const ToDoList = () => {
                 <button className="btn btn-primary mt-2" onClick={() => setModal(true)}>Create Task</button>
             </div>
             <div className="task-container">
-                {taskList && taskList.map((obj, index) => <Card taskObj = {obj} key = {obj.id}
+                {taskList.map((obj, index) => <Card taskObj = {obj} index = {obj.id}
                  deleteTask = {deleteTask} updateList={updateList}/>)}
                 {/* {taskList.map((obj) => <li>{obj.Description}</li>)} */}
             </div>

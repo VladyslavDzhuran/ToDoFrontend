@@ -16,8 +16,8 @@ const Cards = ({taskObj, index, deleteTask, updateList}) =>{
       setModal(!modal)
     }
 
-  const updateTask = (obj) =>{
-      updateList(obj, index)
+  const updateTask = (taskObj) =>{
+      updateList(taskObj, index)
   }
 
     return (

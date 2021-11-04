@@ -43,12 +43,14 @@ const EditTask = ({modal, toggle, updateTask, taskObj}) => {
     const handleUpdate = (e) =>{
        e.preventDefault();
        let tempObj={}
-       tempObj['User'] = user
-       tempObj['Name'] = taskName
-       tempObj['Status'] = status
-       tempObj['Priority'] = priority
-       taskObj['DeadLine'] = deadLine
-       tempObj['Description'] = description
+       tempObj["user"] = user
+       tempObj["name"] = taskName
+       tempObj["status"] = 1
+       tempObj["priority"] = 1
+       tempObj["deadLine"] = deadLine
+       tempObj["description"] = description
+       tempObj["userId"] = 1
+       tempObj["category"] = 1
        updateTask(tempObj)
     }
 
