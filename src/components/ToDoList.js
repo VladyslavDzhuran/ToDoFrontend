@@ -31,7 +31,7 @@ const ToDoList = () => {
     const saveTask = async (taskObj) => {
         debugger
         await axios.post(`https://localhost:44370/taskItem`, taskObj)
-        const arr =  await axios.get("https://localhost:44370/taskItem")
+        const arr =  await axios.get("https://localhost:44370/taskItem") 
         setTaskList(arr.data)
         setModal(false)
     }
