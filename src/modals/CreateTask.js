@@ -66,7 +66,8 @@ const CreateTask = ({modal,toggle,save}) => {
                       <form>
                       <div className="form-group">
                             <label>User</label>
-                                  <Form.Select  value={userId} onChange={handleChange}  name="userId">
+                                  <Form.Select  value={userId} onChange={handleChange} name="userId">
+                            <option value="none" hidden="">Choose user</option>
                             {Object.keys(UserId).map(key => (
                             <option key={key} value={key}>
                             {UserId[key]}
@@ -76,6 +77,7 @@ const CreateTask = ({modal,toggle,save}) => {
                             <div className="form-group">
                             <label>Category</label>
                                   <Form.Select  value={category} onChange={handleChange}  name="category">
+                                  <option value="none" hidden="">Choose category</option>
                             {Object.keys(Category).map(key => (
                             <option key={key} value={key}>
                             {Category[key]}
@@ -84,12 +86,13 @@ const CreateTask = ({modal,toggle,save}) => {
                                   </div>
                             <div className="form-group">
                                 <label>Task Name</label>
-                                <input type="text" minlength="6" maxlength="15" className="form-control" value=
-                                {taskName} onChange={handleChange} name="taskName"/>
+                                <input type="text" minlength="6" maxlength="15" className="form-control" value= 
+                                {taskName} onChange={handleChange} placeholder="Enter task name" name="taskName"/>
                             </div>
                             <div className="form-group">
                             <label>Priority</label>
                                   <Form.Select  value={priority} onChange={handleChange} name="priority">
+                            <option value="none" hidden="">Choose priority</option>
                             {Object.keys(Priority).map(key => (
                             <option key={key} value={key}>
                             {Priority[key]}
@@ -99,6 +102,7 @@ const CreateTask = ({modal,toggle,save}) => {
                             <div className="form-group">
                             <label>Status</label>
                                   <Form.Select  value={status} onChange={handleChange} name="status">
+                            <option value="none" hidden="">Choose status</option>
                             {Object.keys(Status).map(key => (
                             <option key={key} value={key}>
                             {Status[key]}
