@@ -1,9 +1,10 @@
 import React from 'react';
 
 const Category = {
-    1 : "Work",
-    2 : "Home",
-    3 :"Study",
-    4 :"SadGorod"
+    1 : "Choose Category",
+    2 : "Work",
+    3 : "Home",
+    4 :"Study",
+    5 :"SadGorod"
 }
 export default Category;
