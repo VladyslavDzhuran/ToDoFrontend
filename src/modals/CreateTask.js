@@ -117,7 +117,8 @@ const CreateTask = ({modal,toggle,save}) => {
                             <div className="form-group">
                                 <label>Description</label>
                                   <textarea rows = "5"  className="form-control" value=
-                                  {description} onChange={handleChange} name="description" minlength="3" maxlength="6"> </textarea>
+                                  {description} onChange={handleChange} name="description" placeholder="Enter description"  
+                                  minlength="3" maxlength="6"> </textarea>
                             </div>
                       </form>
                 </ModalBody>
