@@ -29,7 +29,7 @@ const ToDoList = () => {
     }
              
     const saveTask = async (taskObj) => {
-        debugger
+        console.log(taskObj)
         await axios.post(`https://localhost:44370/taskItem`, taskObj)
         const arr =  await axios.get("https://localhost:44370/taskItem") 
         setTaskList(arr.data)
@@ -38,7 +38,6 @@ const ToDoList = () => {
 
     const updateList = async (taskObj, index) =>{
         console.log(taskObj)
-        console.log(index)
         await axios.put(`https://localhost:44370/taskItem/${index}`,taskObj)
         const arr =  await axios.get("https://localhost:44370/taskItem")
         setTaskList(arr.data)

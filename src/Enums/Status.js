@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Status = {
-    InProgress : "In progress",
-        Done : "Done",
-        NotStarted : "Not Started"
+    1 : "In progress",
+        2 : "Done",
+        3 : "Not Started"
 };
 
 export default Status;
