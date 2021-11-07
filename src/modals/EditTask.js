@@ -31,11 +31,12 @@ const EditTask = ({modal, toggle, updateTask, taskObj}) => {
        tempObj["deadLine"] = deadLine
        tempObj["description"] = description
        updateTask(tempObj)
+       window.location.reload()
     }
       useEffect(() =>{
-          setDescription(taskObj.Description)
-          setDeadLine(taskObj.DeadLine)
-          setTaskName(taskObj.Name)
+          setDescription(taskObj.description)
+          setDeadLine(taskObj.deadLine)
+          setTaskName(taskObj.name)
       },[])
     return (
                <Modal isOpen={modal} toggle={toggle}>
