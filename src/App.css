@@ -17,7 +17,7 @@ card-tr{
 }
 .card-wrapper{
   height:  400px;
-  width: 22%;
+  width: 25%;
   display: flex;
   flex-wrap: column;
   padding: 20px 20px;
