@@ -104,7 +104,7 @@ const EditTask = ({modal, toggle, updateTask, taskObj}) => {
 
                      <div className="form-group">
                          <label>Task Name</label>
-                         <input type="text" minlength="6" maxlength="15" className="form-control" value= 
+                         <input type="text" minlength="6" maxlength="15" className="valid" value= 
                          {taskName} onChange={handleChange} placeholder="Enter task name" name="taskName"/>
                      </div>
 
@@ -142,7 +142,7 @@ const EditTask = ({modal, toggle, updateTask, taskObj}) => {
 
                      <div className="form-group">
                          <label>Description</label>
-                           <textarea rows = "5"  className="form-control" value=
+                           <textarea rows = "5"  className="valid" value=
                            {description} onChange={handleChange} name="description" placeholder="Enter description"  
                            minlength="3" maxlength="6"> </textarea>
                      </div>
