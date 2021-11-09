@@ -34,14 +34,15 @@ const ToDoList = () => {
         const arr =  await axios.get("https://localhost:44370/taskItem") 
         setTaskList(arr.data)
         setModal(false)
+        window.location.reload()
     }
 
     const updateList = async (taskObj, index) =>{
-        console.log(taskObj)
         await axios.put(`https://localhost:44370/taskItem/${index}`,taskObj)
         const arr =  await axios.get("https://localhost:44370/taskItem")
         setTaskList(arr.data)
         setModal(false)
+        window.location.reload()
     }
     return(
         <>

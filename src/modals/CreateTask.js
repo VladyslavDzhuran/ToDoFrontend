@@ -56,9 +56,6 @@ const CreateTask = ({modal,toggle,save}) => {
         taskObj["description"] = description
         taskObj["userId"] = parseInt(userId)
         taskObj["category"] = parseInt(category)
-       
-       
-
         save(taskObj)
     }
 
@@ -92,7 +89,7 @@ const CreateTask = ({modal,toggle,save}) => {
 
                             <div className="form-group">
                                 <label>Task Name</label>
-                                <input type="text" minlength="3" maxlength="15" className="valid" value= 
+                                <input type="text" minlength="3" maxlength="15" className="form-control" value= 
                                 {taskName} onChange={handleChange} placeholder="Enter task name" name="taskName"/>
                             </div>
 
@@ -126,7 +123,7 @@ const CreateTask = ({modal,toggle,save}) => {
 
                             <div className="form-group">
                                 <label>Description</label>
-                                  <textarea rows = "5"  className="valid" value=
+                                  <textarea rows = "5"  className="form-control" value=
                                   {description} onChange={handleChange} name="description" placeholder="Enter description"  
                                   minlength="3" maxlength="130"> </textarea>
                             </div>

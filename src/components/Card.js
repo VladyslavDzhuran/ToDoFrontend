@@ -43,7 +43,7 @@ const Cards = ({taskObj, index, deleteTask, updateList}) =>{
                onClick={() =>setModal(true)}></i>
                <i class ="fas fa-trash-alt mt-5" style = {{"color": "#5DC250", "cursor": "pointer"}}
                onClick={handleDelete}></i>
-       <EditTask modal={modal} toggle={toggle} updateTask={updateTask}
+       <EditTask modal={modal} toggle={toggle} updateTask={updateTask} 
        taskObj={taskObj}/>
       </div>
   </Card.Body>
