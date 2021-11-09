@@ -56,8 +56,12 @@ const CreateTask = ({modal,toggle,save}) => {
         taskObj["description"] = description
         taskObj["userId"] = parseInt(userId)
         taskObj["category"] = parseInt(category)
+       
+       
+
         save(taskObj)
     }
+
     return (
                <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader
@@ -74,6 +78,7 @@ const CreateTask = ({modal,toggle,save}) => {
                             </option>))}
                                   </Form.Select >
                                   </div>
+
                             <div className="form-group">
                             <label>Category</label>
                                   <Form.Select  value={category} onChange={handleChange}  name="category">
@@ -84,11 +89,13 @@ const CreateTask = ({modal,toggle,save}) => {
                             </option>))}
                                   </Form.Select >
                                   </div>
+
                             <div className="form-group">
                                 <label>Task Name</label>
-                                <input type="text" minlength="6" maxlength="15" className="form-control" value= 
+                                <input type="text" minlength="3" maxlength="15" className="valid" value= 
                                 {taskName} onChange={handleChange} placeholder="Enter task name" name="taskName"/>
                             </div>
+
                             <div className="form-group">
                             <label>Priority</label>
                                   <Form.Select  value={priority} onChange={handleChange} name="priority">
@@ -99,6 +106,7 @@ const CreateTask = ({modal,toggle,save}) => {
                             </option>))}
                                   </Form.Select >
                                   </div>
+
                             <div className="form-group">
                             <label>Status</label>
                                   <Form.Select  value={status} onChange={handleChange} name="status">
@@ -109,17 +117,20 @@ const CreateTask = ({modal,toggle,save}) => {
                             </option>))}
                                   </Form.Select >
                                   </div>
+
                             <div className="form-group">
                             <label>End date:</label>
                                 <input type="date" className="form-control"
                                 min="2021-11-02" max="2022-12-12" value={deadLine} onChange={handleChange} name="deadLine"/>
                             </div>
+
                             <div className="form-group">
                                 <label>Description</label>
-                                  <textarea rows = "5"  className="form-control" value=
+                                  <textarea rows = "5"  className="valid" value=
                                   {description} onChange={handleChange} name="description" placeholder="Enter description"  
-                                  minlength="3" maxlength="6"> </textarea>
+                                  minlength="3" maxlength="130"> </textarea>
                             </div>
+
                       </form>
                 </ModalBody>
                 <ModalFooter>
